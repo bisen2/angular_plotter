@@ -1,6 +1,5 @@
 // Plots data from angular resolved setup
 // written by Ben Isenhart (bisenhar@uvm.edu)
-// Spring 2019
 
 // To anyone trying to use and/or modify this code:
 // This procedure file is a total mess, and really works just for the very specific case I made it
@@ -108,6 +107,7 @@ Function/S MakeHeatmap()
 	Display; DelayUpdate
 	AppendImage dataMatrix vs {lambdaLong,theta}
 	ModifyImage dataMatrix ctab={*,*,yellowhot,0} // set colorscheme
+	SetAxis bottom 450,650
 
 End	
 
@@ -116,5 +116,6 @@ Function/S MakeForwardEmission()
 
 	Wave deg0,lambda
 	Display deg0 vs lambda
+	SetAxis bottom 450,650
 	
 End
