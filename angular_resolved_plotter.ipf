@@ -114,7 +114,8 @@ End
 // make graph of forward emission
 Function/S MakeForwardEmission()
 
-	Wave deg0,lambda,deg0Scaled,dark
+	Wave deg0,lambda,dark
+	Make/N=2068 deg0Scaled
 	deg0Scaled[]=deg0[p]-dark[p]
 	Display deg0Scaled vs lambda
 	SetAxis bottom 450,650
