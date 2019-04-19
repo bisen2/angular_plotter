@@ -4,9 +4,12 @@ This is an Igor Script used to plot the data collected with the angular resolved
  
 ### Data formatting for script to work:
 -Only txt files in the folder are collected spectra and possibly a README.txt
+
 -The filenames of the collected spectra start with a letter of lower ascii value than "d" (so that dark is the last file loaded and README is not loaded at all)
+
 -There is a spectrum from 0 to 70 degrees in 2.5 degree intervals
 
 ### How this script could be improved:
 -Extract wave names from file names to improve generalizability
+
 -Choose columns of dataMatrix based on wave names to improve generalizability
