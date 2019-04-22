@@ -88,6 +88,7 @@ Function/S PrepData()
 	dataMatrix[][26]=deg65[p]-dark[p]
 	dataMatrix[][27]=deg67pt5[p]-dark[p]
 	dataMatrix[][28]=deg70[p]-dark[p]
+	MatrixTranspose dataMatrix
 //	Variable index
 //	for (index=0; index<30; index++)
 //		String thisWaveName = StringFromList(index,matrixWaveNames)
@@ -105,9 +106,11 @@ Function/S MakeHeatmap()
 
 	Wave dataMatrix,theta,lambdaLong
 	Display; DelayUpdate
-	AppendImage dataMatrix vs {lambdaLong,theta}
+	AppendImage dataMatrix vs {theta,lambdaLong}
 	ModifyImage dataMatrix ctab={*,*,yellowhot,0} // set colorscheme
-	SetAxis bottom 450,650
+	SetAxis left 450,650
+	Label bottom "Angle (degrees)"
+	Label left "Wavelength (nm)"
 
 End	
 
@@ -119,5 +122,7 @@ Function/S MakeForwardEmission()
 	deg0Scaled[]=deg0[p]-dark[p]
 	Display deg0Scaled vs lambda
 	SetAxis bottom 450,650
+	Label bottom "Wavelength (nm)"
+	Label left "Intensity (a.u.)"
 	
 End
