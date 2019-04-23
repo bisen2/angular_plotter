@@ -15,7 +15,8 @@ When the procedure file is compiled, a new menu item labeled "Spectrometer" shou
 
 -Do Everything (Ctrl 5): Runs all of the previous commands sequentially. This is good for doing everything quickly, but is less robust than running each command individually.
 
-## Note: As of now, all PNGs are saved with a 1024 resolution to make very high quality graphs. If you want to conserve disk space, a lower resolution could be set in the script.
+### Note:
+As of now, all PNGs are saved with a 1024 resolution to make very high quality graphs. If you want to conserve disk space, a lower resolution could be set in the script.
  
 ### Data formatting for script to work:
 -Only txt files in the folder are collected spectra and possibly a README.txt
