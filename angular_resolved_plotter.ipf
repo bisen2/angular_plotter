@@ -16,7 +16,9 @@ Menu "Spectrometer"
 	"Make DataMatrix/2", PrepData()
 	"Make Heatmap/3", MakeHeatmap()
 	"Plot Forward Emission/4", MakeForwardEmission()
-	"Do everything/5", LoadFiles();PrepData();MakeHeatmap();MakeForwardEmission()
+	"Do All of the Above/5", LoadFiles();PrepData();MakeHeatmap();MakeForwardEmission()
+	"Save Heatmap/6", SaveHeatmap()
+	"Save Forward Emission/7", SaveFE()
 End
 
 // load all files and save in appropriate waves
@@ -119,5 +121,17 @@ Function/S MakeForwardEmission()
 	deg0Scaled[]=deg0[p]-dark[p]
 	Display deg0Scaled vs lambda
 	SetAxis bottom 450,650
+	
+End
+
+Function/S SaveHeatMap()
+
+	SavePICT/E=-8/EF=1/I/W=(0,0,5,5)
+	
+End
+
+Function/S SaveFE()
+
+	SavePICT/E=-8/EF=1/I/W=(0,0,5,3)
 	
 End
