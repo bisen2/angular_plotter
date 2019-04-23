@@ -16,7 +16,7 @@ Menu "Spectrometer"
 	"Make DataMatrix/2", PrepData()
 	"Make Heatmap/3", MakeHeatmap()
 	"Plot Forward Emission/4", MakeForwardEmission()
-	"Do All of the Above/5", LoadFiles();PrepData();MakeHeatmap();MakeForwardEmission()
+	"Do Everything/5", LoadFiles();PrepData();MakeHeatmap();MakeForwardEmission()
 End
 
 // load all files and save in appropriate waves
