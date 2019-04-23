@@ -11,6 +11,9 @@
 // not have the time or energy to make this program more general and elegant, but if you
 // want to do some work to it, be my guest
 
+// global variables:
+Variable/G pngRes=1024
+
 Menu "Spectrometer"
 	"Load Files/1", LoadFiles()
 	"Make DataMatrix/2", PrepData()
@@ -104,6 +107,7 @@ End
 // make heatmap from DataMatrix
 Function/S MakeHeatmap()
 
+	Variable pngRes
 	Wave dataMatrix,theta,lambdaLong
 	Display; DelayUpdate
 	AppendImage dataMatrix vs {theta,lambdaLong}
@@ -111,13 +115,14 @@ Function/S MakeHeatmap()
 	SetAxis left 450,650
 	Label bottom "Angle (degrees)"
 	Label left "Wavelength (nm)"
-	SavePICT/E=-5/EF=1/I/W=(0,0,5,5)/RES=1024
+	SavePICT/E=-5/EF=1/I/W=(0,0,5,5)/RES=(pngRes)
 
 End	
 
 // make graph of forward emission
 Function/S MakeForwardEmission()
 
+	Variable pngRes
 	Wave deg0,lambda,dark
 	Make/N=2068 deg0Scaled
 	deg0Scaled[]=deg0[p]-dark[p]
@@ -125,6 +130,6 @@ Function/S MakeForwardEmission()
 	SetAxis bottom 450,650
 	Label bottom "Wavelength (nm)"
 	Label left "Intensity (a.u.)"
-	SavePICT/E=-5/EF=1/I/W=(0,0,5,3)/RES=1024
+	SavePICT/E=-5/EF=1/I/W=(0,0,5,3)/RES=(pngRes)
 
 End
