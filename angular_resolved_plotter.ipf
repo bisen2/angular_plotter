@@ -17,8 +17,6 @@ Menu "Spectrometer"
 	"Make Heatmap/3", MakeHeatmap()
 	"Plot Forward Emission/4", MakeForwardEmission()
 	"Do All of the Above/5", LoadFiles();PrepData();MakeHeatmap();MakeForwardEmission()
-	"Save Heatmap/6", SaveHeatmap()
-	"Save Forward Emission/7", SaveFE()
 End
 
 // load all files and save in appropriate waves
@@ -113,6 +111,7 @@ Function/S MakeHeatmap()
 	SetAxis left 450,650
 	Label bottom "Angle (degrees)"
 	Label left "Wavelength (nm)"
+	SavePICT/E=-5/EF=1/I/W=(0,0,5,5)/RES=1024
 
 End	
 
@@ -126,17 +125,6 @@ Function/S MakeForwardEmission()
 	SetAxis bottom 450,650
 	Label bottom "Wavelength (nm)"
 	Label left "Intensity (a.u.)"
-	
-End
+	SavePICT/E=-5/EF=1/I/W=(0,0,5,3)/RES=1024
 
-Function/S SaveHeatMap()
-
-	SavePICT/E=-8/EF=1/I/W=(0,0,5,5)
-	
-End
-
-Function/S SaveFE()
-
-	SavePICT/E=-8/EF=1/I/W=(0,0,5,3)
-	
 End
