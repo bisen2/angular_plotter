@@ -138,10 +138,13 @@ End
 // make waterfall plot
 Function/S MakeWaterfall()
 
+	Variable pngRes
 	Wave dataMatrix,lambda,theta
-	Duplicate dataMatrix dataMatrixTranspose
-	MatrixTranspose dataMatixTranspose
-	NewWaterfall dataMatrixTranspose vs {lambda,theta}
+	Duplicate/O dataMatrix dataMatrixTranspose
+	Duplicate/O theta thetaShort
+	Redimension/N=29 thetaShort
+	MatrixTranspose dataMatrixTranspose
+	NewWaterfall dataMatrixTranspose vs {lambda,thetaShort}
 	ModifyWaterfall angle=90,hidden=1,axlen=0.75
 	SetAxis bottom 450,650
 	ModifyGraph rgb=(0,0,0),lsize=1,nolabel(left)=2,axThick(left)=0
