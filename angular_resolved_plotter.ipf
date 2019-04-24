@@ -148,6 +148,10 @@ Function/S MakeWaterfall()
 	ModifyWaterfall angle=90,hidden=1,axlen=0.75
 	SetAxis bottom 450,650
 	ModifyGraph rgb=(0,0,0),lsize=1,nolabel(left)=2,axThick(left)=0
+	ModifyGraph manTick(right)={0,10,0,0},manMinor(right)={0,0}
+	ModifyGraph tickUnit(bottom)=1,tickUnit(right)=1
+	Label bottom "Wavelength (nm)"
+	Label right "Emission Angle (degrees)"
 	SavePICT/E=-5/EF=1/I/W=(0,0,5,3)/RES=(pngRes)
 
 End
