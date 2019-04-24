@@ -19,7 +19,8 @@ Menu "Spectrometer"
 	"Make DataMatrix/2", PrepData()
 	"Make Heatmap/3", MakeHeatmap()
 	"Plot Forward Emission/4", MakeForwardEmission()
-	"Do Everything/5", LoadFiles();PrepData();MakeHeatmap();MakeForwardEmission()
+	"Make Waterfall Plot/5", MakeWaterfall()
+	"Do Everything/6", LoadFiles();PrepData();MakeHeatmap();MakeForwardEmission();MakeWaterfall
 End
 
 // load all files and save in appropriate waves
@@ -130,6 +131,20 @@ Function/S MakeForwardEmission()
 	SetAxis bottom 450,650
 	Label bottom "Wavelength (nm)"
 	Label left "Intensity (a.u.)"
+	SavePICT/E=-5/EF=1/I/W=(0,0,5,3)/RES=(pngRes)
+
+End
+
+// make waterfall plot
+Function/S MakeWaterfall()
+
+	Wave dataMatrix,lambda,theta
+	Duplicate dataMatrix dataMatrixTranspose
+	MatrixTranspose dataMatixTranspose
+	NewWaterfall dataMatrixTranspose vs {lambda,theta}
+	ModifyWaterfall angle=90,hidden=1,axlen=0.75
+	SetAxis bottom 450,650
+	ModifyGraph rgb=(0,0,0),lsize=1,nolabel(left)=2,axThick(left)=0
 	SavePICT/E=-5/EF=1/I/W=(0,0,5,3)/RES=(pngRes)
 
 End

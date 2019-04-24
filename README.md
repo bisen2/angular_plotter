@@ -13,7 +13,9 @@ When the procedure file is compiled, a new menu item labeled "Spectrometer" shou
 
 -Plot Forward Emission (Ctrl 4): Plots the forward emission spectrum of the loaded data and formats the graph. Also pops up a dialog to select a location to save the image as a PNG
 
--Do Everything (Ctrl 5): Runs all of the previous commands sequentially. This is good for doing everything quickly, but is less robust than running each command individually.
+-Make Waterfall Plot (Ctrl 5): Plots all emission spectra stacked on top of one another. Also pops up a dialog to select a location to save the image as a PNG
+
+-Do Everything (Ctrl 6): Runs all of the previous commands sequentially. This is good for doing everything quickly, but is less robust than running each command individually.
 
 ### Note:
 As of now, all PNGs are saved with a 1024 dpi resolution to make very high quality graphs. If you want to conserve disk space, a lower resolution could be set in the script.
