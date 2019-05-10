@@ -113,7 +113,7 @@ Function/S MakeHeatmap()
 	Display; DelayUpdate
 	AppendImage dataMatrix vs {theta,lambdaLong}
 	ModifyImage dataMatrix ctab={*,*,yellowhot,0} // set colorscheme
-	SetAxis left 450,650
+	SetAxis left 650,450
 	Label bottom "Angle (degrees)"
 	Label left "Wavelength (nm)"
 	SavePICT/E=-5/EF=1/I/W=(0,0,5,5)/RES=(pngRes)
